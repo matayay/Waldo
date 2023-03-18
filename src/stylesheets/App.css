@@ -1,0 +1,15 @@
+.App {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture {
+    height: 50vh;
+}
+
+.picture img {
+    max-width: 100%;
+    max-height: 100%;
+}
