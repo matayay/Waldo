@@ -9,7 +9,6 @@ function App() {
     const [Display, setDisply] = useState("none");
     const [X, setX] = useState(0);
     const [Y, setY] = useState(0);
-
     const selection = (event: any) => {
         setX(event.clientX);
         setY(event.clientY);
@@ -25,10 +24,10 @@ function App() {
         }
     }
 
+    const [index, setIndex] = useState(0);
     const handleForm = (event: any) => {
-        setDisply("none");
-
         event.preventDefault();
+        setDisply("none");
     }
 
     const styles = {
@@ -41,9 +40,9 @@ function App() {
         <div className="App">
             <div className="popup" style={styles}>
                 <form onSubmit={handleForm}>
-                    <input type="submit" value="Wizard" />
-                    <input type="submit" value="Waldo" />
-                    <input type="submit" value="Odlaw" />
+                    <input type="submit" value="Wizard" onClick={() => setIndex(0)} />
+                    <input type="submit" value="Waldo" onClick={() => setIndex(1)} />
+                    <input type="submit" value="Odlaw" onClick={() => setIndex(2)} />
                 </form>
             </div>
 
