@@ -34,7 +34,7 @@
 .icons img {
     width: 4vh;
     height: auto;
-    border: 1rem solid rgb(0, 7, 50);
+    border: 2vh solid rgb(0, 7, 50);
     border-radius: 1rem;
 }
 
@@ -60,5 +60,11 @@
     .image {
         display: flex;
         align-items: center;
+    }
+}
+
+@media (max-height: 400px) {
+    .picture h1 {
+        font-size: 1rem;
     }
 }

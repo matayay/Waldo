@@ -9,9 +9,9 @@ function App() {
     const [Display, setDisply] = useState("none");
     const [X, setX] = useState(0);
     const [Y, setY] = useState(0);
-    const selection = (event: any) => {
-        setX(event.clientX);
-        setY(event.clientY);
+    const selection = (event: React.MouseEvent) => {
+        setX(event.pageX);
+        setY(event.pageY);
 
         if (Display == "none")
         {
