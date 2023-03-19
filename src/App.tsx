@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import waldo_image from "./assets/waldoimg.jpeg";
 import waldo from "./assets/waldo.jpg";
 import odlaw from "./assets/odlaw.jpg";
@@ -25,9 +25,10 @@ function App() {
     }
 
     const [index, setIndex] = useState(0);
-    const handleForm = (event: any) => {
+    const handleForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setDisply("none");
+        let curr_val = event.currentTarget.elements[index] as HTMLInputElement;
     }
 
     const styles = {
