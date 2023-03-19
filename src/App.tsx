@@ -13,43 +13,55 @@ function App() {
         setX(event.pageX);
         setY(event.pageY);
 
-        if (Display == "none")
-        {
+        if (Display == "none") {
             setDisply("block");
-        }
-
-        else
-        {
+        } else {
             setDisply("none");
         }
-    }
+    };
 
     const [index, setIndex] = useState(0);
     const handleForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setDisply("none");
         let curr_val = event.currentTarget.elements[index] as HTMLInputElement;
-    }
+    };
 
     const styles = {
         display: Display,
         left: `${X}px`,
-        top: `${Y}px`
-    }
+        top: `${Y}px`,
+    };
 
     return (
         <div className="App">
             <div className="popup" style={styles}>
                 <form onSubmit={handleForm}>
-                    <input type="submit" value="Wizard" onClick={() => setIndex(0)} />
-                    <input type="submit" value="Waldo" onClick={() => setIndex(1)} />
-                    <input type="submit" value="Odlaw" onClick={() => setIndex(2)} />
+                    <input
+                        type="submit"
+                        value="Wizard"
+                        onClick={() => setIndex(0)}
+                    />
+                    <input
+                        type="submit"
+                        value="Waldo"
+                        onClick={() => setIndex(1)}
+                    />
+                    <input
+                        type="submit"
+                        value="Odlaw"
+                        onClick={() => setIndex(2)}
+                    />
                 </form>
             </div>
 
             <div className="picture" onClick={selection}>
                 <h1>Time:</h1>
-                <img id="main-pic" src={waldo_image} alt="Where's Waldo Picture." />
+                <img
+                    id="main-pic"
+                    src={waldo_image}
+                    alt="Where's Waldo Picture."
+                />
                 <div className="icons">
                     <div className="image">
                         <img src={wizard} alt="Picture of the wizard." />
@@ -59,7 +71,7 @@ function App() {
                         <img src={waldo} alt="Picture of Waldo." />
                         <h4>Waldo</h4>
                     </div>
-                    <div className="image"> 
+                    <div className="image">
                         <img src={odlaw} alt="Picture of Odlaw" />
                         <h4>Odlaw</h4>
                     </div>
