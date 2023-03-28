@@ -9,6 +9,14 @@ function App() {
     const [Display, setDisply] = useState("none");
     const [X, setX] = useState(0);
     const [Y, setY] = useState(0);
+    const [index, setIndex] = useState(0);
+
+    const styles = {
+        display: Display,
+        left: `${X}px`,
+        top: `${Y}px`,
+    };
+
     const selection = (event: React.MouseEvent) => {
         setX(event.pageX);
         setY(event.pageY);
@@ -20,17 +28,12 @@ function App() {
         }
     };
 
-    const [index, setIndex] = useState(0);
     const handleForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setDisply("none");
         let curr_val = event.currentTarget.elements[index] as HTMLInputElement;
-    };
-
-    const styles = {
-        display: Display,
-        left: `${X}px`,
-        top: `${Y}px`,
+        console.log(X);
+        console.log(Y);
     };
 
     return (
@@ -39,17 +42,17 @@ function App() {
                 <form onSubmit={handleForm}>
                     <input
                         type="submit"
-                        value="Wizard"
+                        value="Wizard" // position: X - 4.3539, Y - 1.5109
                         onClick={() => setIndex(0)}
                     />
                     <input
                         type="submit"
-                        value="Waldo"
+                        value="Waldo" // position: X - 1.3843, Y - 1.5333
                         onClick={() => setIndex(1)}
                     />
                     <input
                         type="submit"
-                        value="Odlaw"
+                        value="Odlaw" // position: X - 2.5887, Y - 1.7371
                         onClick={() => setIndex(2)}
                     />
                 </form>
