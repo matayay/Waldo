@@ -107,8 +107,8 @@ function App() {
         }
 
         if (imageRect) {
-            X2 = imageRect.width / xRatio + imageRect.left;
-            Y2 = imageRect.height / yRatio + imageRect.top;
+            X2 = imageRect.width / xRatio + (imageRect.left + window.scrollX);
+            Y2 = imageRect.height / yRatio + (imageRect.top + window.scrollY);
         }
 
         let distance = Math.sqrt(
